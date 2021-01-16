@@ -1,4 +1,3 @@
-//By: Austin Greisman
 
 /*You don't need the includes in the header file as long as
 you put them in the main file */
