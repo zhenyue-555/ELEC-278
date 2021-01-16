@@ -1,0 +1,80 @@
+//By: Austin Greisman
+#include <stdio.h>
+#include <stdlib.h>
+
+//This is a header file I made with the modified LinkedList functions.
+#include "LinkedListStack.h"
+
+//Start of Stack code
+typedef struct Stack {
+	LinkedList ll;
+} Stack;
+
+void initS(Stack *s) {
+	//Using the previously created function for init the linkedlist
+	init(&(s->ll));
+}
+
+void Push(Stack *s, int x) {
+	//The Node in the LinkedLists take doubles not integers
+	x = (double)x;
+	//Pushes add to front
+	addFront(&(s->ll), x);
+}
+
+int Pop(Stack *s, int *res) {
+	//Just checks to see if the LinkedList (Stack) is empty before is does anything.
+	if (s->ll.head->value == 0)
+	{
+		printf("Stack is empty!\n");
+		return 1;
+	}
+
+	removeFront(&(s->ll), res);
+	return 0;
+}
+
+int isEmptyS(Stack *s) {
+	//Just checks to see if the LinkedList (Stack) is empty before is does anything.
+	if (s->ll.head->value == 0)
+	{
+		return 1;
+	}
+
+	//You're supposed to return 0 if it's not empty
+	return 0;
+
+}
+
+int main(void) {
+	Stack s;
+	int x;
+
+	initS(&s);
+
+	//One way you could check to see if the stack was empty
+	//Also could just put a print statement into the function
+	if (isEmptyS(&s) == 1)
+	{
+		printf("Stack is empty!\n");
+	}
+	Push(&s, 5);
+	Push(&s, 8);
+	Push(&s, 9);
+	Push(&s, 7);
+
+	//You can even still print the "stack" if you want!
+	printf("Top ");
+	print(&(s.ll));
+	printf("Bottom\n");
+
+	Pop(&s, &x);
+	printf("I poped %d\n", x);
+
+	printf("Top ");
+	print(&(s.ll));
+	printf("Bottom\n");
+
+	return 0;
+
+}
