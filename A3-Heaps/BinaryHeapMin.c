@@ -1,4 +1,4 @@
-//By: Austin Greisman
+
 #include <stdio.h>
 #include <stdlib.h>
 
