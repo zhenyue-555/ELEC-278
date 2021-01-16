@@ -1,8 +1,5 @@
 /*
  * heaps.c
- *
- *  Created on: Nov 1, 2016
- *      Author: hisham
  */
 #include <stdio.h>
 #include <stdlib.h>
