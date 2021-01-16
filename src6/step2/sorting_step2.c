@@ -1,8 +1,6 @@
 /*
  * sorting.c
  *
- *  Created on: Nov 13, 2016
- *      Author: hisham
  */
 #include <stdio.h>
 #include <stdlib.h>
